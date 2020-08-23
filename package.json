@@ -1,0 +1,23 @@
+{
+  "name": "bit-sixty4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bot-making-server/BitSixty4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperGDPro3-mk2/Bit-Sixty4/issues"
+  },
+  "homepage": "https://github.com/SuperGDPro3-mk2/Bit-Sixty4#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
+}

@@ -12,7 +12,7 @@ client.on(`message`, message => {
     const args = message.content.slice(config.prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
     if(command === `help`) message.channel.send(`No commands yet.`);
-})
+});
 
 
 client.login(config.token);

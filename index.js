@@ -2,6 +2,7 @@ const Discord = require(`discord.js`);
 const client = new Discord.Client();
 const config = require(`./config.json`);
 const fs = require(`fs`);
+const bits = require(`./bits.json`);
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -19,6 +20,13 @@ client.on(`message`, message => {
     if(message.author.bot || !message.content.startsWith(config.prefix)) return;
     const args = message.content.slice(config.prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+    if(!bits[message.author.id])
+    {
+        bits[message.author.id] = {
+            bits: 0,
+            digibits: 0
+        }
+    }
     if (!client.commands.has(command)) return;
 
     try {

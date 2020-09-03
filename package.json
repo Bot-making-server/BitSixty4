@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/SuperGDPro3-mk2/Bit-Sixty4#readme",
   "dependencies": {
-    "discord.js": "^12.3.1"
+    "discord.js": "^12.3.1",
+    "fs": "0.0.1-security"
   }
 }

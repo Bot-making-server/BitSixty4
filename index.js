@@ -53,8 +53,12 @@ client.on(`message`, message => {
                 .setTitle(`Cool down!`) 
                 .setDescription(`${reply}\nPlease wait \`${timeLeft.toFixed(1)}\` more seconds!`)
                 .setColor(`#003cff`);
-            message.channel.send(coolEmb)
+            message.channel.send(coolEmb);
+            return;
         }
+
+        timestamps.set(message.author.id, now);
+        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
     }
 
     try {
@@ -63,7 +67,7 @@ client.on(`message`, message => {
 	    console.error(error);
 	    message.reply(`Error:\n\`${error}\``);
     }
+    fs.writeFile(`bits.json`, JSON.stringify(bits), (err) => {if(err) console.log(err);})
 });
-
 
 client.login(config.token);

@@ -13,6 +13,6 @@ module.exports = {
             .setDescription(`⛏️ You went mining and obtained ${mined} bits!`)
             .setColor(`#00FF00`);
         message.channel.send(mineEmb);
-        bits[message.author.id] += mined;
+        bits[message.author.id].bits += mined;
 	},
 };

@@ -1,0 +1,12 @@
+{
+    "digibit": {
+        "cost": 1,
+        "currency": "bit",
+        "description": "A digital version of a **Bit**, used to secure bits from robbers! Limited by memory."
+    },
+    "bit": {
+        "cost": 1,
+        "currency": "digibit",
+        "description": "The accepted currency."
+    }
+}

@@ -14,7 +14,7 @@ for (const file of commandFiles) {
 
 client.once(`ready`, () => {
     console.log(`Bit64ON`);
-    client.user.setActivity(`bits to your Discord!`, {type: `STREAMING`});
+    client.user.setActivity(`bits to your Discord!`, {type: `STREAMING`, url: "https://www.twitch.tv/supergdlegend"});
 });
 
 client.on(`message`, message => {
@@ -25,7 +25,8 @@ client.on(`message`, message => {
     {
         bits[message.author.id] = {
             bits: 0,
-            digibits: 0
+            digibits: 0,
+            bytes: 2500
         }
     }
 
@@ -37,6 +38,8 @@ client.on(`message`, message => {
     if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Discord.Collection());
     }
+
+    bits[message.author.id].bytes += 12;
     
     const now = Date.now();
     const timestamps = cooldowns.get(command.name);
